@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="U2houtai"
+  id="myeclipse.1510977562332"
+  context-root="/U2houtai"
+  j2ee-spec="6.0"
+  archive="U2houtai.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

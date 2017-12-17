@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context> 
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource name="jdbc/news" auth="Container" type="javax.sql.DataSource"	
+	 maxActive="100" maxIdle="10" maxWait="10000" username="wang"
+	 password="110120" driverClassName="com.mysql.jdbc.Driver"
+	 url="jdbc:mysql://localhost:3306/easybuy?
+	 	 useUnicode=true&amp;characterEncoding=utf-8" />		 	 
+</Context>

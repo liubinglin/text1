@@ -1,0 +1,94 @@
+/**
+ * Created by Administrator on 2017/9/19.
+ */
+$(function(){
+    $("#Myfrom").validate({
+        rules:{
+        	loginName:{
+                required:true,
+                maxlength:6,
+            },
+            userName:{
+                required:true,
+                maxlength:6,
+            },
+            passWord:{
+                required:true,
+                digits:true,
+                maxlength:6,
+            },
+            repassword:{
+                required:true,
+                digits:true,
+                maxlength:6,
+                equalTo:"#PassWord"
+            },
+            mobile:{
+                required:true,
+                checkPhone:true
+            },
+            identityCode:{
+                required:true,
+            },
+            checktext:{
+                required:true,
+            },
+            email:{
+                required:true,
+                email:true,
+            },
+            userAddress:{
+            	 required:true,
+            },
+        }, messages:{
+        	loginName:{
+                required:"请输入账号",
+
+                maxlength:"用户名最多6位",
+            },
+            userName:{
+                required:"请输入账号",
+
+                maxlength:"用户名最多6位",
+            },
+            passWord:{
+                required:"请输入密码",
+                digits:"请输入纯数字",
+                maxlength:"用户名最多6位",
+            },
+            repassword:{
+                required:"请输入密码",
+                digits:"请输入纯数字",
+                maxlength:"用户名最多6位",
+                equalTo:"两次密码不一样"
+            },
+            mobile:{
+                required:"请输入电话号",
+                checkPhone:"电话号码不正确"
+            },
+            identityCode:{
+                required:"请输入身份号",
+            },
+            checktext:{
+                required:"你没有同意协议",
+            },
+            email:{
+                required:"请输入邮箱",
+                email:"邮箱格式不正确",
+            },
+            userAddress:{
+            	required:"请输入收货地址",
+            },
+        },
+        onfocusout:function(element){
+            $(element).valid();
+        }
+
+    })
+    //增加了手机验证正则
+    jQuery.validator.addMethod("checkPhone",function(value,element){
+        var tel = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/
+        return this.optional(element) || (tel.test(value));
+    },"电话号码格式不正确")
+
+})
